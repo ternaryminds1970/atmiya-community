@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "509843134707",
+    "project_id": "atmiya-community",
+    "storage_bucket": "atmiya-community.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509843134707:android:7ffc8ec2c6d5129600bf86",
+        "android_client_info": {
+          "package_name": "com.ternaryminds.atmiya_community"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGv4Ppiv9-YIPpK9hp1UC63n3wd1_lMrg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
