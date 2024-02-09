@@ -72,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               TextField(
+                keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
                 decoration: const InputDecoration(
                   label: Text('Email'),

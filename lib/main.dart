@@ -1,7 +1,10 @@
 import 'package:atmiya_community/bloc/auth/auth_cubit.dart';
+import 'package:atmiya_community/bloc/filter/filter_bloc.dart';
+import 'package:atmiya_community/bloc/upload/upload_bloc.dart';
 import 'package:atmiya_community/bloc/user/user_bloc.dart';
 import 'package:atmiya_community/config/router.dart';
 import 'package:atmiya_community/repositories/auth_repository.dart';
+import 'package:atmiya_community/repositories/student_repository.dart';
 import 'package:atmiya_community/repositories/user_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(
@@ -32,6 +36,13 @@ class MyApp extends StatelessWidget {
         RepositoryProvider(
           create: (context) => UserRepository(),
         ),
+        RepositoryProvider(
+          create: (context) => StudentRepository(),
+        ),
+        RepositoryProvider(
+          create: (context) => UserRepository(),
+        ),
+
       ],
       child: MultiBlocProvider(
         providers: [
@@ -43,6 +54,16 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => UserBloc(
               userRepository: context.read<UserRepository>(),
+            ),
+          ),
+          BlocProvider(
+            create: (context) => FilterBloc(
+              studentRepository: context.read<StudentRepository>(),
+            ),
+          ),
+          BlocProvider(
+            create: (context) => UploadBloc(
+              studentRepository: context.read<StudentRepository>(),
             ),
           ),
         ],
